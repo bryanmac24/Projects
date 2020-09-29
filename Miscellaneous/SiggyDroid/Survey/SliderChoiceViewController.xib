@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SliderChoiceViewController">
+            <connections>
+                <outlet property="currentLabel" destination="f7K-Nk-ux5" id="5uF-ae-rwN"/>
+                <outlet property="maxLabel" destination="cRK-V9-e13" id="bMj-l1-cJa"/>
+                <outlet property="minLabel" destination="qvf-IY-i6i" id="WeF-9E-3DQ"/>
+                <outlet property="nextButton" destination="ZEO-kl-jxq" id="R7Y-pw-tP5"/>
+                <outlet property="questionTitleLabel" destination="MrD-WM-lrI" id="Sib-A3-8vJ"/>
+                <outlet property="slider" destination="Whh-gO-7EG" id="QnF-Ua-ufH"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Where was I at the prompt? " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MrD-WM-lrI">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="86"/>
+                    <color key="backgroundColor" red="0.0" green="0.68235294120000001" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="86" id="Rbn-3L-TvM"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="18"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZEO-kl-jxq">
+                    <rect key="frame" x="0.0" y="518" width="160" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="2nC-IF-WwI"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="18"/>
+                    <state key="normal" title="N E X T"/>
+                    <connections>
+                        <action selector="nextBtnClicked:" destination="-1" eventType="touchUpInside" id="dqi-a4-8Us"/>
+                    </connections>
+                </button>
+                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Whh-gO-7EG" customClass="ASValueTrackingSlider">
+                    <rect key="frame" x="25" y="269" width="269" height="31"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="DxT-iD-tb8"/>
+                    </constraints>
+                </slider>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qvf-IY-i6i">
+                    <rect key="frame" x="9" y="329" width="42" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="42" id="eFX-32-t0W"/>
+                        <constraint firstAttribute="height" constant="21" id="slP-3w-tMm"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cRK-V9-e13">
+                    <rect key="frame" x="270" y="329" width="42" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="42" id="1Bg-k1-Fnl"/>
+                        <constraint firstAttribute="height" constant="21" id="5d7-d9-nv5"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f7K-Nk-ux5">
+                    <rect key="frame" x="27" y="412" width="175" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="ZFU-1y-6Gz"/>
+                        <constraint firstAttribute="width" constant="175" id="qZ1-Dz-P26"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="20"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DvI-eC-GLC">
+                    <rect key="frame" x="160" y="518" width="160" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="YL1-bQ-ipf"/>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="e6y-zO-1lz"/>
+                        <constraint firstAttribute="height" relation="lessThanOrEqual" constant="50" id="fVs-Do-gSH"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="18"/>
+                    <state key="normal" title="H E L P"/>
+                    <connections>
+                        <action selector="helpBtnClicked:" destination="-1" eventType="touchUpInside" id="nsS-iY-cKB"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="DvI-eC-GLC" secondAttribute="trailing" id="58a-pE-V7S"/>
+                <constraint firstItem="MrD-WM-lrI" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Ami-8d-cU1"/>
+                <constraint firstAttribute="trailing" secondItem="Whh-gO-7EG" secondAttribute="trailing" constant="28" id="FEJ-yi-SbX"/>
+                <constraint firstItem="f7K-Nk-ux5" firstAttribute="top" secondItem="qvf-IY-i6i" secondAttribute="bottom" constant="62" id="GAG-fk-ZGb"/>
+                <constraint firstItem="Whh-gO-7EG" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="HUe-cV-JRy"/>
+                <constraint firstItem="MrD-WM-lrI" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="IfH-tk-xWX"/>
+                <constraint firstAttribute="bottom" secondItem="ZEO-kl-jxq" secondAttribute="bottom" id="MkY-GE-gPB"/>
+                <constraint firstItem="qvf-IY-i6i" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="9" id="NCv-KQ-NXa"/>
+                <constraint firstAttribute="bottom" secondItem="DvI-eC-GLC" secondAttribute="bottom" id="SoT-2E-eol"/>
+                <constraint firstAttribute="trailing" secondItem="cRK-V9-e13" secondAttribute="trailing" constant="8" id="UkO-af-yb5"/>
+                <constraint firstItem="ZEO-kl-jxq" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.5" id="cJp-xB-kfe"/>
+                <constraint firstItem="ZEO-kl-jxq" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="jUF-q1-mol"/>
+                <constraint firstItem="Whh-gO-7EG" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="27" id="pnT-ht-yvf"/>
+                <constraint firstItem="f7K-Nk-ux5" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="27" id="qPO-zT-HUy"/>
+                <constraint firstAttribute="trailing" secondItem="MrD-WM-lrI" secondAttribute="trailing" id="r99-3P-af6"/>
+                <constraint firstItem="cRK-V9-e13" firstAttribute="top" secondItem="Whh-gO-7EG" secondAttribute="bottom" constant="30" id="vLa-WU-wjR"/>
+                <constraint firstItem="DvI-eC-GLC" firstAttribute="leading" secondItem="ZEO-kl-jxq" secondAttribute="trailing" id="wwK-yq-Z9D"/>
+                <constraint firstItem="Whh-gO-7EG" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="xik-hD-EDG"/>
+                <constraint firstItem="qvf-IY-i6i" firstAttribute="top" secondItem="Whh-gO-7EG" secondAttribute="bottom" constant="30" id="yTL-Fm-Nxk"/>
+            </constraints>
+            <point key="canvasLocation" x="35" y="53"/>
+        </view>
+    </objects>
+</document>
