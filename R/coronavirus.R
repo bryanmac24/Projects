@@ -93,3 +93,25 @@ plot_ly(data = conf_df,
         name = "Confirmed",
         textinfo="label+value+percent parent")
 
+
+df <- coronavirus::refresh_coronavirus_jhu()
+library(dplyr)
+library(tidyr)
+
+df2 <- df %>% group_by(location,data_type, date) %>%
+  summarise(total_cases = sum(value)) %>%
+  pivot_wider(names_from = data_type, values_from = total_cases) %>%
+  arrange(date) %>%
+  mutate(active = cases_new - deaths_new - recovered_new) %>%
+  mutate(active_total = cumsum(active),
+         recovered_total = cumsum(recovered_new),
+         death_total = cumsum(deaths_new)) %>%
+  mutate(total_cases = active_total + death_total + recovered_total) %>%
+  rename(cases = cases_new, deaths = deaths_new, recovered = recovered_new) %>%
+  select(date,location,deaths,recovered,active,cases,death_total,recovered_total,active_total,total_cases)
+
+library(ggplot2)
+library(plotly)
+ggplotly(ggplot(data=df2, aes(x=date, y=total_cases,group=location,color=location)) +
+  geom_step() + theme(legend.position="none"))
+
