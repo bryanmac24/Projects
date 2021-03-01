@@ -7,6 +7,7 @@ library(MLeval)
 
 data<-coronavirus::coronavirus %>%
   filter(!type == "confirmed") %>%
+  filter(country == "US") %>%
   filter(!is.na(type))
 
 intrain <- createDataPartition(y = data$type, p= 0.8, list = FALSE)
@@ -15,7 +16,7 @@ testing <- data[-intrain,]
 
 training[["type"]] = factor(training[["type"]])
 
-# prepare training scheme
+# prepare Cross Validation
 control <- trainControl(method = "cv", 
                         number = 10, 
                         savePredictions = TRUE, 
