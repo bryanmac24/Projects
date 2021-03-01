@@ -1,3 +1,5 @@
+options(scipen = 999)
+
 library(dplyr)
 library(caret)
 library(mlbench)
@@ -20,20 +22,35 @@ control <- trainControl(method = "cv",
                         classProbs = TRUE, 
                         verboseIter = TRUE)
 # CART
+set.seed(7)
 fit.cart <- train(type ~ cases, data=training, method="rpart", trControl=control, preProc=c("center", "scale"))
+fit.cart
 # LDA
+set.seed(7)
 fit.lda <- train(type ~ cases, data=training, method="lda", trControl=control, preProc=c("center", "scale"))
+fit.lda
 # SVM
+set.seed(7)
 fit.svm <- train(type ~ cases, data=training, method="svmRadial", trControl=control, preProc=c("center", "scale"))
+it.svm
 # kNN
+set.seed(7)
 fit.knn <- train(type ~ cases, data=training, method="knn", trControl=control, preProc=c("center", "scale"))
+fit.knn
 # Random Forest
+set.seed(7)
 fit.rf <- train(type ~ cases, data=training, method="rf", trControl=control, preProc=c("center", "scale"))
+fit.rf
 # Logistic Regression
+set.seed(7)
 fit.log <- train(type ~ cases, data=training, method="glm", trControl=control,family=binomial, preProc=c("center", "scale"))
+fit.log
 # Neural Net
+set.seed(7)
 fit.nn <- train(type ~ cases, data=training, method="nnet", trControl=control, preProc=c("center", "scale"))
+fit.nn
 # collect resample
+set.seed(7)
 results <- resamples(list(CART=fit.cart, LDA=fit.lda, SVM=fit.svm, KNN=fit.knn, RF=fit.rf,Log.Regression=fit.log,NN=fit.nn))
 
 # summarize differences between modes
